@@ -1,2 +1,6 @@
 geopandas
 lxml
+shapely
+sqlalchemy
+flask
+geojson

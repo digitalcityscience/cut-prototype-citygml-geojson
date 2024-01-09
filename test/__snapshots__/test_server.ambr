@@ -1,0 +1,349 @@
+# serializer version: 1
+# name: test_endpoint_no_parameters_retuns_all
+  dict({
+    'features': list([
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                8.495866,
+                53.915932,
+              ]),
+              list([
+                8.49588,
+                53.915956,
+              ]),
+              list([
+                8.495949,
+                53.915942,
+              ]),
+              list([
+                8.495935,
+                53.915918,
+              ]),
+              list([
+                8.495866,
+                53.915932,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'bodenhoehe': '1300',
+          'id': 'DEHH_00000001-0000-2001-b538-8763db60db60',
+          'lage': '1000',
+          'surface_type': 'ground',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                8.489743,
+                53.914275,
+              ]),
+              list([
+                8.489446,
+                53.914289,
+              ]),
+              list([
+                8.489461,
+                53.914404,
+              ]),
+              list([
+                8.489758,
+                53.91439,
+              ]),
+              list([
+                8.489743,
+                53.914275,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'bodenhoehe': '1300',
+          'id': 'DEHH_00000002-0000-2001-b538-8763db60db60',
+          'lage': '1000',
+          'surface_type': 'ground',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                8.49588,
+                53.915956,
+              ]),
+              list([
+                8.495866,
+                53.915932,
+              ]),
+              list([
+                8.4959,
+                53.915925,
+              ]),
+              list([
+                8.495914,
+                53.915949,
+              ]),
+              list([
+                8.49588,
+                53.915956,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'dachhoehe': '5000',
+          'id': 'DEHH_00000001-0007-2000-b538-8763db60db60',
+          'measuredHeight': '3.726',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                8.495935,
+                53.915918,
+              ]),
+              list([
+                8.495949,
+                53.915942,
+              ]),
+              list([
+                8.495914,
+                53.915949,
+              ]),
+              list([
+                8.4959,
+                53.915925,
+              ]),
+              list([
+                8.495935,
+                53.915918,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'dachhoehe': '5000',
+          'id': 'DEHH_00000001-0008-2000-b538-8763db60db60',
+          'measuredHeight': '3.726',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                8.489461,
+                53.914404,
+              ]),
+              list([
+                8.489446,
+                53.914289,
+              ]),
+              list([
+                8.489502,
+                53.914344,
+              ]),
+              list([
+                8.489461,
+                53.914404,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'dachhoehe': '5000',
+          'id': 'DEHH_00000002-0005-2000-b538-8763db60db60',
+          'measuredHeight': '8.968',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                8.489446,
+                53.914289,
+              ]),
+              list([
+                8.489743,
+                53.914275,
+              ]),
+              list([
+                8.48975,
+                53.914333,
+              ]),
+              list([
+                8.489502,
+                53.914344,
+              ]),
+              list([
+                8.489446,
+                53.914289,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'dachhoehe': '5000',
+          'id': 'DEHH_00000002-0007-2000-b538-8763db60db60',
+          'measuredHeight': '8.968',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                8.489758,
+                53.91439,
+              ]),
+              list([
+                8.489461,
+                53.914404,
+              ]),
+              list([
+                8.489502,
+                53.914344,
+              ]),
+              list([
+                8.48975,
+                53.914333,
+              ]),
+              list([
+                8.489758,
+                53.91439,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'dachhoehe': '5000',
+          'id': 'DEHH_00000002-0008-2000-b538-8763db60db60',
+          'measuredHeight': '8.968',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+    ]),
+    'links': list([
+    ]),
+    'numberMatched': 7,
+    'numberReturned': 7,
+    'timeStamp': '2024-01-01T12:00:01Z',
+    'type': 'FeatureCollection',
+  })
+# ---
+# name: test_endpoint_with_bbox_enclosing_all_returns_all
+  dict({
+    'features': list([
+      'DEHH_00000001-0000-2001-b538-8763db60db60',
+      'DEHH_00000002-0000-2001-b538-8763db60db60',
+      'DEHH_00000001-0007-2000-b538-8763db60db60',
+      'DEHH_00000001-0008-2000-b538-8763db60db60',
+      'DEHH_00000002-0005-2000-b538-8763db60db60',
+      'DEHH_00000002-0007-2000-b538-8763db60db60',
+      'DEHH_00000002-0008-2000-b538-8763db60db60',
+    ]),
+    'links': list([
+    ]),
+    'numberMatched': 7,
+    'numberReturned': 7,
+    'timeStamp': '2024-01-01T12:00:01Z',
+    'type': 'FeatureCollection',
+  })
+# ---
+# name: test_endpoint_with_bbox_returns_correct_features
+  dict({
+    'features': list([
+      'DEHH_00000002-0000-2001-b538-8763db60db60',
+      'DEHH_00000002-0005-2000-b538-8763db60db60',
+      'DEHH_00000002-0007-2000-b538-8763db60db60',
+      'DEHH_00000002-0008-2000-b538-8763db60db60',
+    ]),
+    'links': list([
+    ]),
+    'numberMatched': 4,
+    'numberReturned': 4,
+    'timeStamp': '2024-01-01T12:00:01Z',
+    'type': 'FeatureCollection',
+  })
+# ---
+# name: test_endpoint_with_bbox_returns_empty
+  dict({
+    'features': list([
+    ]),
+    'links': list([
+    ]),
+    'numberMatched': 0,
+    'numberReturned': 0,
+    'timeStamp': '2024-01-01T12:00:01Z',
+    'type': 'FeatureCollection',
+  })
+# ---
+# name: test_endpoint_with_limit
+  dict({
+    'features': list([
+      'DEHH_00000001-0000-2001-b538-8763db60db60',
+    ]),
+    'links': list([
+      dict({
+        'href': 'http://localhost/features?limit=1&startindex=1',
+        'rel': 'next',
+        'type': 'application/json',
+      }),
+    ]),
+    'numberMatched': 7,
+    'numberReturned': 1,
+    'timeStamp': '2024-01-01T12:00:01Z',
+    'type': 'FeatureCollection',
+  })
+# ---
+# name: test_endpoint_with_limit_returns_prev_and_next
+  dict({
+    'features': list([
+      'DEHH_00000002-0000-2001-b538-8763db60db60',
+    ]),
+    'links': list([
+      dict({
+        'href': 'http://localhost/features?limit=1&startindex=0',
+        'rel': 'prev',
+        'type': 'application/json',
+      }),
+      dict({
+        'href': 'http://localhost/features?limit=1&startindex=2',
+        'rel': 'next',
+        'type': 'application/json',
+      }),
+    ]),
+    'numberMatched': 7,
+    'numberReturned': 1,
+    'timeStamp': '2024-01-01T12:00:01Z',
+    'type': 'FeatureCollection',
+  })
+# ---
