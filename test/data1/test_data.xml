@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<core:CityModel xmlns:bldg="http://www.opengis.net/citygml/building/1.0" xmlns:xAL="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:gml="http://www.opengis.net/gml" xmlns:app="http://www.opengis.net/citygml/appearance/1.0" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/1.0" xmlns:core="http://www.opengis.net/citygml/1.0" xmlns:gen="http://www.opengis.net/citygml/generics/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/citygml/building/1.0 http://repository.gdi-de.org/schemas/adv/citygml/building/1.0/buildingLoD2.xsd http://www.opengis.net/citygml/cityobjectgroup/1.0 http://repository.gdi-de.org/schemas/adv/citygml/cityobjectgroup/1.0/cityObjectGroupLoD2.xsd http://www.opengis.net/citygml/appearance/1.0 http://repository.gdi-de.org/schemas/adv/citygml/appearance/1.0/appearanceLoD2.xsd http://www.opengis.net/citygml/1.0 http://repository.gdi-de.org/schemas/adv/citygml/1.0/cityGMLBaseLoD2.xsd http://www.opengis.net/citygml/generics/1.0 http://repository.gdi-de.org/schemas/adv/citygml/generics/1.0/genericsLoD2.xsd">
+  <gml:name>LoD2_32_587_5922_1_HH</gml:name>
+  <gml:boundedBy>
+    <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN2016_NH" srsDimension="3">
+      <gml:lowerCorner srsDimension="3">587000.000 5922000.000 5.229</gml:lowerCorner>
+      <gml:upperCorner srsDimension="3">588000.000 5923000.000 18.031</gml:upperCorner>
+    </gml:Envelope>
+  </gml:boundedBy>
+  <core:cityObjectMember>
+    <bldg:Building gml:id="DEHHALKAn0000ySB">
+      <core:creationDate>2023-02-23</core:creationDate>
+      <core:externalReference>
+        <core:informationSystem>http://repository.gdi-de.org/schemas/adv/citygml/fdv/art.htm#_9100</core:informationSystem>
+        <core:externalObject>
+          <core:name>DEHHALKAn0000ySB</core:name>
+        </core:externalObject>
+      </core:externalReference>
+      <gen:stringAttribute name="DatenquelleLage">
+        <gen:value>1000</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="DatenquelleBodenhoehe">
+        <gen:value>1100</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="Gemeindeschluessel">
+        <gen:value>02600605</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="DatenquelleDachhoehe">
+        <gen:value>1000</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="DatenquelleGeschossanzahl">
+        <gen:value>1000</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="Geometrietyp2DReferenz">
+        <gen:value>3000</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="Grundrissaktualitaet">
+        <gen:value>2023-01-26</gen:value>
+      </gen:stringAttribute>
+      <bldg:function>31001_3070</bldg:function>
+      <bldg:roofType>3100</bldg:roofType>
+      <bldg:measuredHeight uom="urn:adv:uom:m">4.627</bldg:measuredHeight>
+      <bldg:storeysAboveGround>1</bldg:storeysAboveGround>
+      <bldg:lod2Solid>
+        <gml:Solid gml:id="ID_688e2c26-ca32-461e-a572-4c530d712e76">
+          <gml:exterior>
+            <gml:CompositeSurface gml:id="ID_6a60fcff-c885-43d1-8f74-7bf11e2a296a">
+              <gml:surfaceMember xlink:href="#DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_c8861c92-e085-44e1-a812-c803636cc90a_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_5ea19404-ba96-4b6f-9f3b-1eabfeb411c9_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_70f65053-67c1-401e-83f5-0f9654ce6cbf_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_2c17463c-fe3c-44e9-be8a-ed8d4c42327b_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly"/>
+            </gml:CompositeSurface>
+          </gml:exterior>
+        </gml:Solid>
+      </bldg:lod2Solid>
+      <bldg:lod2TerrainIntersection>
+        <gml:MultiCurve>
+          <gml:curveMember>
+            <gml:LineString>
+              <gml:posList srsDimension="3">587416.631 5922786.548 7.019 587417.505 5922785.992 7.019  587416.631 5922786.548 7.019</gml:posList>
+            </gml:LineString>
+          </gml:curveMember>
+        </gml:MultiCurve>
+      </bldg:lod2TerrainIntersection>
+      <bldg:boundedBy>
+        <bldg:RoofSurface gml:id="DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_bc9b03c2-4c63-4aa8-a1fd-9f174df516ee">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2_poly_0_">
+                      <gml:posList srsDimension="3">587399.861 5922749.794 11.646 587421.437 5922783.489 11.646 587416.631 5922786.548 10.073 587395.064 5922752.866 10.073 587399.861 5922749.794 11.646</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:RoofSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:RoofSurface gml:id="DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_edfbc4b5-e0f9-48af-bd7f-b0ddfb491722">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2_poly_0_">
+                      <gml:posList srsDimension="3">587404.658 5922746.722 10.073 587426.242 5922780.430 10.073 587421.437 5922783.489 11.646 587399.861 5922749.794 11.646 587404.658 5922746.722 10.073</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:RoofSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_c8861c92-e085-44e1-a812-c803636cc90a_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_5fa93fc3-e3c9-4db9-b08e-e7ae785e6805">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_c8861c92-e085-44e1-a812-c803636cc90a_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_c8861c92-e085-44e1-a812-c803636cc90a_2_poly_0_">
+                      <gml:posList srsDimension="3">587395.064 5922752.866 7.019 587395.064 5922752.866 10.073 587416.631 5922786.548 10.073 587416.631 5922786.548 7.019 587395.064 5922752.866 7.019</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_5ea19404-ba96-4b6f-9f3b-1eabfeb411c9_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_422742d9-f3ca-47aa-8b39-49a4c6a78fa2">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_5ea19404-ba96-4b6f-9f3b-1eabfeb411c9_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_5ea19404-ba96-4b6f-9f3b-1eabfeb411c9_2_poly_0_">
+                      <gml:posList srsDimension="3">587426.242 5922780.430 7.019 587426.242 5922780.430 10.073 587404.658 5922746.722 10.073 587404.658 5922746.722 7.019 587426.242 5922780.430 7.019</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_70f65053-67c1-401e-83f5-0f9654ce6cbf_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_6be2faf9-751d-4881-b254-aa2d38802f56">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_70f65053-67c1-401e-83f5-0f9654ce6cbf_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_70f65053-67c1-401e-83f5-0f9654ce6cbf_2_poly_0_">
+                      <gml:posList srsDimension="3">587404.658 5922746.722 7.019 587404.658 5922746.722 10.073 587399.861 5922749.794 11.646 587395.064 5922752.866 10.073 587395.064 5922752.866 7.019 587404.658 5922746.722 7.019</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_2c17463c-fe3c-44e9-be8a-ed8d4c42327b_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_0a0a9f72-3800-4658-85a2-67c5c03a5e65">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_2c17463c-fe3c-44e9-be8a-ed8d4c42327b_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_2c17463c-fe3c-44e9-be8a-ed8d4c42327b_2_poly_0_">
+                      <gml:posList srsDimension="3">587416.631 5922786.548 7.019 587416.631 5922786.548 10.073 587421.437 5922783.489 11.646 587426.242 5922780.430 10.073 587426.242 5922780.430 7.019 587416.631 5922786.548 7.019</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:GroundSurface gml:id="DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_d7b10698-3032-4fb1-b83a-eefeff83ff9e">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly_0_">
+                      <gml:posList srsDimension="3">587416.631 5922786.548 7.019 587426.242 5922780.430 7.019 587404.658 5922746.722 7.019 587395.064 5922752.866 7.019 587416.631 5922786.548 7.019</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:GroundSurface>
+      </bldg:boundedBy>
+      <bldg:address>
+        <core:Address>
+          <core:xalAddress>
+            <xAL:AddressDetails>
+              <xAL:Country>
+                <xAL:CountryName>Germany</xAL:CountryName>
+                <xAL:Locality Type="City">
+                  <xAL:LocalityName>Hamburg</xAL:LocalityName>
+                  <xAL:Thoroughfare Type="Street">
+                    <xAL:ThoroughfareNumber/>
+                    <xAL:ThoroughfareName>Escheburger Weg</xAL:ThoroughfareName>
+                  </xAL:Thoroughfare>
+                  <xAL:PostalCode>
+                    <xAL:PostalCodeNumber>21039</xAL:PostalCodeNumber>
+                  </xAL:PostalCode>
+                </xAL:Locality>
+              </xAL:Country>
+            </xAL:AddressDetails>
+          </core:xalAddress>
+        </core:Address>
+      </bldg:address>
+    </bldg:Building>
+  </core:cityObjectMember>
+  <core:cityObjectMember>
+    <bldg:Building gml:id="DEHHALKA3kW000EP">
+      <core:creationDate>2023-02-23</core:creationDate>
+      <core:externalReference>
+        <core:informationSystem>http://repository.gdi-de.org/schemas/adv/citygml/fdv/art.htm#_9100</core:informationSystem>
+        <core:externalObject>
+          <core:name>DEHHALKA3kW000EP</core:name>
+        </core:externalObject>
+      </core:externalReference>
+      <gen:stringAttribute name="DatenquelleLage">
+        <gen:value>1000</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="DatenquelleBodenhoehe">
+        <gen:value>1100</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="Gemeindeschluessel">
+        <gen:value>02600605</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="DatenquelleDachhoehe">
+        <gen:value>1000</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="DatenquelleGeschossanzahl">
+        <gen:value>1000</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="Geometrietyp2DReferenz">
+        <gen:value>3000</gen:value>
+      </gen:stringAttribute>
+      <gen:stringAttribute name="Grundrissaktualitaet">
+        <gen:value>2023-01-26</gen:value>
+      </gen:stringAttribute>
+      <bldg:function>31001_2140</bldg:function>
+      <bldg:roofType>1000</bldg:roofType>
+      <bldg:measuredHeight uom="urn:adv:uom:m">9.000</bldg:measuredHeight>
+      <bldg:storeysAboveGround>1</bldg:storeysAboveGround>
+      <bldg:lod2Solid>
+        <gml:Solid gml:id="ID_7d274bd7-5f90-4609-add8-39c5ebb80814">
+          <gml:exterior>
+            <gml:CompositeSurface gml:id="ID_a09282b3-c655-43e1-b1ab-daa0a55809e6">
+              <gml:surfaceMember xlink:href="#DEHH_5f54fbe2-c26d-4454-bf10-78b218e6d451_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_4168b264-76af-4aa2-abf7-fafd4b168b7a_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_5a41524b-d07a-4e57-9e89-39852303821b_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_c564810b-d9e0-4e0e-9e99-9db9cd56cc9a_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_2076f414-da8f-44b8-9866-ae95a5ac6ba2_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_1365b5b2-3cdd-4bcb-8579-a33770ac2c32_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_1278ed05-c768-42c3-a66d-ccda7d5b3c9c_2_poly"/>
+              <gml:surfaceMember xlink:href="#DEHH_7d4438dd-7399-4da0-aad2-31666fe048c9_2_poly"/>
+            </gml:CompositeSurface>
+          </gml:exterior>
+        </gml:Solid>
+      </bldg:lod2Solid>
+      <bldg:lod2TerrainIntersection>
+        <gml:MultiCurve>
+          <gml:curveMember>
+            <gml:LineString>
+              <gml:posList srsDimension="3">587497.790 5922958.805 9.163 587497.353 5922957.871 9.031 587497.790 5922958.805 9.163</gml:posList>
+            </gml:LineString>
+          </gml:curveMember>
+        </gml:MultiCurve>
+      </bldg:lod2TerrainIntersection>
+      <bldg:boundedBy>
+        <bldg:GroundSurface gml:id="DEHH_5f54fbe2-c26d-4454-bf10-78b218e6d451_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_daff3666-73d4-4275-9a56-775e11c9c5ca">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_5f54fbe2-c26d-4454-bf10-78b218e6d451_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_5f54fbe2-c26d-4454-bf10-78b218e6d451_2_poly_0_">
+                      <gml:posList srsDimension="3">587497.790 5922958.805 9.031 587489.489 5922941.063 9.031 587489.168 5922941.213 9.031 587484.419 5922943.435 9.031 587492.720 5922961.178 9.031 587497.470 5922958.955 9.031 587497.790 5922958.805 9.031</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:GroundSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:RoofSurface gml:id="DEHH_4168b264-76af-4aa2-abf7-fafd4b168b7a_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_1243a579-10cc-4310-bc9b-bd38252f6bd4">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_4168b264-76af-4aa2-abf7-fafd4b168b7a_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_4168b264-76af-4aa2-abf7-fafd4b168b7a_2_poly_0_">
+                      <gml:posList srsDimension="3">587497.470 5922958.955 18.031 587492.720 5922961.178 18.031 587484.419 5922943.435 18.031 587489.168 5922941.213 18.031 587489.489 5922941.063 18.031 587497.790 5922958.805 18.031 587497.470 5922958.955 18.031</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:RoofSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_5a41524b-d07a-4e57-9e89-39852303821b_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_a89e2a37-ccec-4005-9465-1cd75196e175">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_5a41524b-d07a-4e57-9e89-39852303821b_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_5a41524b-d07a-4e57-9e89-39852303821b_2_poly_0_">
+                      <gml:posList srsDimension="3">587497.790 5922958.805 18.031 587489.489 5922941.063 18.031 587489.489 5922941.063 9.031 587497.790 5922958.805 9.031 587497.790 5922958.805 18.031</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_c564810b-d9e0-4e0e-9e99-9db9cd56cc9a_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_d21614cb-3c08-46f3-8076-27300a8b2263">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_c564810b-d9e0-4e0e-9e99-9db9cd56cc9a_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_c564810b-d9e0-4e0e-9e99-9db9cd56cc9a_2_poly_0_">
+                      <gml:posList srsDimension="3">587489.489 5922941.063 18.031 587489.168 5922941.213 18.031 587489.168 5922941.213 9.031 587489.489 5922941.063 9.031 587489.489 5922941.063 18.031</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_2076f414-da8f-44b8-9866-ae95a5ac6ba2_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_331f6828-b2cf-4df5-b77e-640b85c6f91c">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_2076f414-da8f-44b8-9866-ae95a5ac6ba2_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_2076f414-da8f-44b8-9866-ae95a5ac6ba2_2_poly_0_">
+                      <gml:posList srsDimension="3">587489.168 5922941.213 18.031 587484.419 5922943.435 18.031 587484.419 5922943.435 9.031 587489.168 5922941.213 9.031 587489.168 5922941.213 18.031</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_1365b5b2-3cdd-4bcb-8579-a33770ac2c32_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_2b10f47f-a966-4ef4-9981-604f3a1a302a">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_1365b5b2-3cdd-4bcb-8579-a33770ac2c32_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_1365b5b2-3cdd-4bcb-8579-a33770ac2c32_2_poly_0_">
+                      <gml:posList srsDimension="3">587484.419 5922943.435 18.031 587492.720 5922961.178 18.031 587492.720 5922961.178 9.031 587484.419 5922943.435 9.031 587484.419 5922943.435 18.031</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_1278ed05-c768-42c3-a66d-ccda7d5b3c9c_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_d4876241-0941-4156-922f-32d51b807802">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_1278ed05-c768-42c3-a66d-ccda7d5b3c9c_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_1278ed05-c768-42c3-a66d-ccda7d5b3c9c_2_poly_0_">
+                      <gml:posList srsDimension="3">587492.720 5922961.178 18.031 587497.470 5922958.955 18.031 587497.470 5922958.955 9.031 587492.720 5922961.178 9.031 587492.720 5922961.178 18.031</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:boundedBy>
+        <bldg:WallSurface gml:id="DEHH_7d4438dd-7399-4da0-aad2-31666fe048c9_2">
+          <bldg:lod2MultiSurface>
+            <gml:MultiSurface gml:id="ID_a8c309f3-9aac-4c87-8f56-5c608bae53aa">
+              <gml:surfaceMember>
+                <gml:Polygon gml:id="DEHH_7d4438dd-7399-4da0-aad2-31666fe048c9_2_poly">
+                  <gml:exterior>
+                    <gml:LinearRing gml:id="DEHH_7d4438dd-7399-4da0-aad2-31666fe048c9_2_poly_0_">
+                      <gml:posList srsDimension="3">587497.470 5922958.955 18.031 587497.790 5922958.805 18.031 587497.790 5922958.805 9.031 587497.470 5922958.955 9.031 587497.470 5922958.955 18.031</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gml:surfaceMember>
+            </gml:MultiSurface>
+          </bldg:lod2MultiSurface>
+        </bldg:WallSurface>
+      </bldg:boundedBy>
+      <bldg:address>
+        <core:Address>
+          <core:xalAddress>
+            <xAL:AddressDetails>
+              <xAL:Country>
+                <xAL:CountryName>Germany</xAL:CountryName>
+                <xAL:Locality Type="City">
+                  <xAL:LocalityName>Hamburg</xAL:LocalityName>
+                  <xAL:Thoroughfare Type="Street">
+                    <xAL:ThoroughfareNumber>10</xAL:ThoroughfareNumber>
+                    <xAL:ThoroughfareName>Escheburger Weg</xAL:ThoroughfareName>
+                  </xAL:Thoroughfare>
+                  <xAL:PostalCode>
+                    <xAL:PostalCodeNumber>21039</xAL:PostalCodeNumber>
+                  </xAL:PostalCode>
+                </xAL:Locality>
+              </xAL:Country>
+            </xAL:AddressDetails>
+          </core:xalAddress>
+        </core:Address>
+      </bldg:address>
+    </bldg:Building>
+  </core:cityObjectMember>
+</core:CityModel>

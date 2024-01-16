@@ -1,11 +1,11 @@
-import argparse
+from argparse import ArgumentParser, FileType
 import pathlib
 
 
-def create_parser():
-    parser = argparse.ArgumentParser(add_help=False)
+def create_parser() -> ArgumentParser:
+    parser = ArgumentParser(add_help=False)
 
-    command_parser = argparse.ArgumentParser()
+    command_parser = ArgumentParser()
     subparsers = command_parser.add_subparsers(title="Commands", dest="command")
     subparsers.required = True
 
@@ -14,7 +14,7 @@ def create_parser():
         "-d",
         required=False,
         help="source directory where gml files are located",
-        default=pathlib.Path('./data/LoD2_CityGML_HH_2016'),
+        default=pathlib.Path('./data/LoD2-DE_HH_2023-04-01'),
         type=pathlib.Path
     )
     convert_parser.add_argument(
@@ -38,7 +38,7 @@ def create_parser():
         required=False,
         help="database output path",
         default='./data/out/footprints.db',
-        type=argparse.FileType('w', encoding='latin-1')
+        type=FileType('w', encoding='latin-1')
     )
     serve_parser = subparsers.add_parser("serve", parents=[parser], help="start server")
     serve_parser .add_argument(
@@ -46,7 +46,7 @@ def create_parser():
         required=False,
         help="database path",
         default='./data/out/footprints.db',
-        type=argparse.FileType('r', encoding='latin-1')
+        type=FileType('r', encoding='latin-1')
     )
     serve_parser.add_argument(
         "-p",

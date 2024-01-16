@@ -1,24 +1,24 @@
-from flask import Flask, request, jsonify, url_for
+from flask import Flask, request, jsonify, url_for, Response
 from sqlalchemy import create_engine, event, text
 import json
 from datetime import datetime
 
-TABLE_NAME = 'features'
+TABLE_NAME: str = 'features'
 
 
 class Server:
-    def __init__(self, port, db_path):
+    def __init__(self, port: str, db_path: str) -> None:
         self.port = port
         self.app = Flask(__name__)
         self.engine = create_engine(f'sqlite:///{db_path}')
         self.setup_db()
 
         @self.app.route('/')
-        def index():
+        def index() -> Response:
             return 'empty'
 
         @self.app.route('/features')
-        def features():
+        def features() -> Response:
             bbox = request.args.get(
                 'bbox', default="-180,-90,180,90")
             bbox_values = [float(val) for val in bbox.split(',')]
@@ -41,19 +41,6 @@ class Server:
 
             count_sql = text(f"SELECT COUNT(*) {base_sql}")
             sql = text(f"SELECT id, geojson {base_sql} LIMIT :limit OFFSET :startindex")
-
-            # count_sql = text(f"""
-            #     SELECT COUNT(*)
-            #     FROM {TABLE_NAME}
-            #     WHERE MbrWithin(geom, BuildMbr(:min_lon, :min_lat, :max_lon, :max_lat))
-            # """)
-
-            # sql = text(f"""
-            #     SELECT id, geojson
-            #     FROM {TABLE_NAME}
-            #     WHERE MbrWithin(geom, BuildMbr(:min_lon, :min_lat, :max_lon, :max_lat))
-            #     LIMIT :limit OFFSET :startindex
-            # """)
 
             with self.engine.connect() as conn:
 
@@ -98,11 +85,11 @@ class Server:
                 'numberReturned': len(features),
             })
 
-    def setup_db(self):
+    def setup_db(self) -> None:
         @event.listens_for(self.engine, "connect")
         def load_spatialite(dbapi_connection, connection_record):
             dbapi_connection.enable_load_extension(True)
             dbapi_connection.execute('SELECT load_extension("mod_spatialite")')
 
-    def run(self, debug=True):
+    def run(self, debug: bool = True) -> None:
         self.app.run(debug=debug, port=self.port, host="0.0.0.0")

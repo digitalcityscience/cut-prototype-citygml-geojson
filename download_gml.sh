@@ -1,5 +1,5 @@
-mkdir -p data/out
-wget -O ./data/lod2-de_hh_2016-11-22_21283_snap_1.GML.zip "http://archiv.transparenz.hamburg.de/hmbtgarchive/HMDK/lod2-de_hh_2016-11-22_21283_snap_1.GML"
-unzip ./data/lod2-de_hh_2016-11-22_21283_snap_1.GML.zip -d ./data/
+mkdir -p ./data/LoD2-DE_HH_2023-04-01 
+curl https://daten-hamburg.de/opendata/3d_stadtmodell_lod2/LoD2-DE_HH_2023-04-01.zip > ./data/LoD2-DE_HH_2023-04-01.zip 
+unzip ./data/LoD2-DE_HH_2023-04-01.zip -d ./data/LoD2-DE_HH_2023-04-01
 
 
