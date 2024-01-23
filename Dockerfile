@@ -15,5 +15,5 @@ COPY ./src/create_db.py .
 COPY ./src/server.py .
 COPY ./src/main.py .
 RUN mkdir /data
-
-CMD ["python", "/convert.py"]
+RUN mkdir /static
+COPY ./src/static/swagger.json static/swagger.json

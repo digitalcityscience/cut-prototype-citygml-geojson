@@ -1,9 +1,8 @@
-from flask import Flask, request, jsonify, url_for, Response, send_from_directory
+from flask import Flask, request, jsonify, url_for, Response
 from sqlalchemy import create_engine, event, text
 import json
 from datetime import datetime
 from flask_swagger_ui import get_swaggerui_blueprint
-import os
 
 TABLE_NAME: str = "features"
 
@@ -11,18 +10,10 @@ TABLE_NAME: str = "features"
 class Server:
     def __init__(self, port: str, db_path: str) -> None:
 
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        parent_dir = os.path.dirname(current_dir)
-        static_folder = os.path.join(parent_dir, 'static')
-
         self.port = port
-        self.app = Flask(__name__, static_folder=static_folder)
+        self.app = Flask(__name__)
         self.engine = create_engine(f"sqlite:///{db_path}")
         self.setup_db()
-
-        static_folder = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), "..", "static"
-        )
 
         swaggerui_blueprint = get_swaggerui_blueprint(
             "", "/static/swagger.json", config={"app_name": "HCU-CUT"}
@@ -114,8 +105,7 @@ class Server:
                     "type": "FeatureCollection",
                     "features": features,
                     "links": links,
-                    "timeStamp": datetime.utcnow().isoformat()
-                    + "Z",  # Include a timestamp
+                    "timeStamp": datetime.utcnow().isoformat() + "Z",  # Include a timestamp
                     "numberMatched": total_count,
                     "numberReturned": len(features),
                 }
