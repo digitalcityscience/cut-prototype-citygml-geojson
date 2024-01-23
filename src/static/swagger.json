@@ -78,6 +78,18 @@
             },
             "style": "form",
             "explode": false
+          },
+          {
+            "name": "bounding_polygon",
+            "in": "query",
+            "description": "Coordinates of the bounding polygon in a 'latitude,longitude' format, separated by semicolons.",
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "10.315909,53.446486;10.315909,53.446842;10.316386,53.446842;10.316386,53.446486;10.315909,53.446486"
+            }
           }
         ],
         "responses": {

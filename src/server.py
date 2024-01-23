@@ -39,7 +39,19 @@ class Server:
                 "startindex", default=0, type=int
             )  # Starting index for items
 
-            base_sql = f"FROM {TABLE_NAME} WHERE MbrWithin(geom, BuildMbr(:min_lon, :min_lat, :max_lon, :max_lat))"
+            bounding_polygon = request.args.get("bounding_polygon", default=None)
+            if bounding_polygon:
+                try:
+                    polygon_coords = bounding_polygon.split(";")
+                    polygon_points = [tuple(map(float, coord.split(","))) for coord in polygon_coords]
+                    polygon_wkt = "POLYGON((" + ", ".join(f"{lon} {lat}" for lon, lat in polygon_points) + "))"
+                except (ValueError, TypeError):
+                    return jsonify({"error": "Invalid bounding_polygon parameter"}), 400
+
+            base_sql = f"FROM {TABLE_NAME} WHERE "
+            if bounding_polygon:
+                base_sql += "MbrWithin(geom, GeomFromText(:polygon_wkt)) AND "
+            base_sql += "MbrWithin(geom, BuildMbr(:min_lon, :min_lat, :max_lon, :max_lat))"
 
             # Add surface type filter if provided
             if surface_type:
@@ -58,6 +70,9 @@ class Server:
 
                 if surface_type:
                     query_params["surface_type"] = surface_type
+
+                if bounding_polygon:
+                    query_params["polygon_wkt"] = polygon_wkt
 
                 total_count = conn.execute(count_sql, query_params).scalar()
 

@@ -1,5 +1,6 @@
 from flask.testing import FlaskClient
 import pathmagic
+import urllib.parse
 assert pathmagic
 
 
@@ -99,3 +100,32 @@ def test_endpoint_with_filter_invalid_property(client: FlaskClient) -> None:
     assert actual["features"][0]["properties"] == {
         "id": "DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly",
     }
+
+
+def test_endpoint_with_bpoly_returns_correct_features(client: FlaskClient) -> None:
+    polygon_str = "10.315909,53.446486;10.315909,53.446842;10.316386,53.446842;10.316386,53.446486;10.315909,53.446486"
+    response = client.get(f'/features?bounding_polygon={polygon_str}')
+
+    assert response.status_code == 200
+    actual = response.json
+    ids = [f["properties"]["id"] for f in actual["features"]]
+    assert ids == [
+        'DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly',
+        'DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2_poly',
+        'DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2_poly']
+
+
+def test_endpoint_with_bpoly_urlencoded(client: FlaskClient) -> None:
+    polygon_str = "10.315909,53.446486;10.315909,53.446842;10.316386,53.446842;10.316386,53.446486;10.315909,53.446486"
+    encoded_polygon = urllib.parse.quote(polygon_str)
+    url = f"/features?bounding_polygon={encoded_polygon}"
+
+    response = client.get(url)
+
+    assert response.status_code == 200
+    actual = response.json
+    ids = [f["properties"]["id"] for f in actual["features"]]
+    assert ids == [
+        'DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly',
+        'DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2_poly',
+        'DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2_poly']
