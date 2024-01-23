@@ -1,0 +1,191 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "HCU-CUT",
+    "description": "This endpoint provides lod2 ground and roof geometries from Hamburg as GeoJSON features",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/features": {
+      "get": {
+        "summary": "Get features",
+        "parameters": [
+          {
+            "name": "surface_type",
+            "in": "query",
+            "required": false,
+            "description": "Filter features by surface type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ground",
+                "roof"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "Limit the number of features returned"
+          },
+          {
+            "name": "startindex",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "The starting index for the return features"
+          },
+          {
+            "name": "bbox",
+            "in": "query",
+            "required": false,
+            "description": "Bounding box to filter features",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 4,
+              "maxItems": 4,
+              "example": [
+                9.966831,
+                53.561622,
+                10.057812,
+                53.611146
+              ]
+            },
+            "style": "form",
+            "explode": false
+          },
+          {
+            "name": "properties",
+            "in": "query",
+            "required": false,
+            "description": "only return properties given in list",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "id",
+                "lage"
+              ]
+            },
+            "style": "form",
+            "explode": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of features",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Feature"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Feature": {
+        "type": "object",
+        "required": [
+          "type",
+          "geometry",
+          "properties"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "geometry": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Polygon"
+                ]
+              },
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "Geometrietyp2DReferenz": {
+                "type": "string"
+              },
+              "Grundrissaktualitaet": {
+                "type": "string",
+                "format": "date",
+                "description": "Date of the latest update to the ground plan"
+              },
+              "bodenhoehe": {
+                "type": "string",
+                "description": "Height of the ground surface"
+              },
+              "dachhoehe": {
+                "type": "string",
+                "description": "Height of the roof"
+              },
+              "function": {
+                "type": "string",
+                "description": "Functional code or classification"
+              },
+              "geschossanzahl": {
+                "type": "string",
+                "description": "Number of floors"
+              },
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the feature"
+              },
+              "lage": {
+                "type": "string",
+                "description": "Position or location code"
+              },
+              "measuredHeight": {
+                "type": "string",
+                "description": "Measured height of the feature"
+              },
+              "roofType": {
+                "type": "string",
+                "description": "Code representing the type of roof"
+              },
+              "storeysAboveGround": {
+                "type": "string",
+                "description": "Number of storeys above ground level"
+              },
+              "surface_type": {
+                "type": "string",
+                "description": "Type of surface, e.g., ground or roof"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

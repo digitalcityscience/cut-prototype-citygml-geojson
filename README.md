@@ -41,7 +41,7 @@ python3 src/main.py createdb -p ./data/out/ -d ./data/out/features.db
 start server with a geojson features endpoint:
 
 ```bash
-python3 src/main.py server -d ./data/out/features.db -p 5000
+python3 src/main.py serve -d ./data/out/features.db -p 5000
 ```
 
 ### Query endpoint
@@ -49,10 +49,14 @@ python3 src/main.py server -d ./data/out/features.db -p 5000
 with running server features can be queried from the endpoint:
 
 ```bash
+curl "http://localhost:5000/features" > /tmp/out.json
 curl "http://localhost:5000/features?&surface_type=ground" > /tmp/out.json
 curl "http://localhost:5000/features?&surface_type=ground&limit=1000&startindex=1000" > /tmp/out.json
 curl "http://localhost:5000/features?bbox=9.966831,53.561622,10.057812,53.611146&surface_type=ground&limit=100" > /tmp/out.json
+curl "http://localhost:5000/features?&properties=id,lage" > /tmp/out.json
 ```
+
+api doc (swagger) can be found under `http://localhost:5000`
 
 ### Run tests
 Install requiremnts

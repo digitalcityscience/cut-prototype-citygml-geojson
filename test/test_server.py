@@ -68,3 +68,34 @@ def test_endpoint_with_filter_roof(client: FlaskClient) -> None:
     assert response.status_code == 200
     actual = response.json
     assert (len(actual["features"])) == 3
+
+
+def test_endpoint_with_filter_id(client: FlaskClient) -> None:
+    response = client.get("/features?properties=id")
+
+    assert response.status_code == 200
+    actual = response.json
+    assert actual["features"][0]["properties"] == {
+        "id": "DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly"
+    }
+
+
+def test_endpoint_with_filter_id_and_lage(client: FlaskClient) -> None:
+    response = client.get("/features?properties=id,lage")
+
+    assert response.status_code == 200
+    actual = response.json
+    assert actual["features"][0]["properties"] == {
+        "id": "DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly",
+        "lage": "1000",
+    }
+
+
+def test_endpoint_with_filter_invalid_property(client: FlaskClient) -> None:
+    response = client.get("/features?properties=id,invalid")
+
+    assert response.status_code == 200
+    actual = response.json
+    assert actual["features"][0]["properties"] == {
+        "id": "DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly",
+    }
