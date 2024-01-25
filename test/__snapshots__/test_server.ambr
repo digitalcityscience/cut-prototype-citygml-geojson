@@ -261,6 +261,254 @@
     'type': 'FeatureCollection',
   })
 # ---
+# name: test_endpoint_with_bpoly_and_intersect
+  dict({
+    'features': list([
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                10.316386,
+                53.44678499999999,
+              ]),
+              list([
+                10.316051,
+                53.446486,
+              ]),
+              list([
+                10.315909,
+                53.44654299999999,
+              ]),
+              list([
+                10.316243,
+                53.44684199999999,
+              ]),
+              list([
+                10.316386,
+                53.44678499999999,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'Geometrietyp2DReferenz': '3000',
+          'Grundrissaktualitaet': '2023-01-26',
+          'bodenhoehe': '1100',
+          'dachhoehe': '1000',
+          'function': '31001_3070',
+          'geschossanzahl': '1000',
+          'id': 'DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly',
+          'lage': '1000',
+          'measuredHeight': '4.627',
+          'roofType': '3100',
+          'storeysAboveGround': '1',
+          'surface_type': 'ground',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                10.316314,
+                53.446814,
+              ]),
+              list([
+                10.31598,
+                53.446514,
+              ]),
+              list([
+                10.315909,
+                53.44654299999999,
+              ]),
+              list([
+                10.316243,
+                53.44684199999999,
+              ]),
+              list([
+                10.316314,
+                53.446814,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'id': 'DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2_poly',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                10.316051,
+                53.446486,
+              ]),
+              list([
+                10.31598,
+                53.446514,
+              ]),
+              list([
+                10.316314,
+                53.446814,
+              ]),
+              list([
+                10.316386,
+                53.44678499999999,
+              ]),
+              list([
+                10.316051,
+                53.446486,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'id': 'DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2_poly',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+    ]),
+    'links': list([
+    ]),
+    'numberMatched': 3,
+    'numberReturned': 3,
+    'timeStamp': '2024-01-01T12:00:01Z',
+    'type': 'FeatureCollection',
+  })
+# ---
+# name: test_endpoint_with_intersect
+  dict({
+    'features': list([
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                10.316386,
+                53.44678499999999,
+              ]),
+              list([
+                10.316051,
+                53.446486,
+              ]),
+              list([
+                10.315909,
+                53.44654299999999,
+              ]),
+              list([
+                10.316243,
+                53.44684199999999,
+              ]),
+              list([
+                10.316386,
+                53.44678499999999,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'Geometrietyp2DReferenz': '3000',
+          'Grundrissaktualitaet': '2023-01-26',
+          'bodenhoehe': '1100',
+          'dachhoehe': '1000',
+          'function': '31001_3070',
+          'geschossanzahl': '1000',
+          'id': 'DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly',
+          'lage': '1000',
+          'measuredHeight': '4.627',
+          'roofType': '3100',
+          'storeysAboveGround': '1',
+          'surface_type': 'ground',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                10.316314,
+                53.446814,
+              ]),
+              list([
+                10.31598,
+                53.446514,
+              ]),
+              list([
+                10.315909,
+                53.44654299999999,
+              ]),
+              list([
+                10.316243,
+                53.44684199999999,
+              ]),
+              list([
+                10.316314,
+                53.446814,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'id': 'DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2_poly',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+      dict({
+        'geometry': dict({
+          'coordinates': list([
+            list([
+              list([
+                10.316051,
+                53.446486,
+              ]),
+              list([
+                10.31598,
+                53.446514,
+              ]),
+              list([
+                10.316314,
+                53.446814,
+              ]),
+              list([
+                10.316386,
+                53.44678499999999,
+              ]),
+              list([
+                10.316051,
+                53.446486,
+              ]),
+            ]),
+          ]),
+          'type': 'Polygon',
+        }),
+        'properties': dict({
+          'id': 'DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2_poly',
+          'surface_type': 'roof',
+        }),
+        'type': 'Feature',
+      }),
+    ]),
+    'links': list([
+    ]),
+    'numberMatched': 3,
+    'numberReturned': 3,
+    'timeStamp': '2024-01-01T12:00:01Z',
+    'type': 'FeatureCollection',
+  })
+# ---
 # name: test_endpoint_with_limit
   dict({
     'features': list([

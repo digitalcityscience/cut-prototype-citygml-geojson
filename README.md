@@ -53,6 +53,8 @@ curl "http://localhost:5000/features" > /tmp/out.json
 curl "http://localhost:5000/features?&surface_type=ground" > /tmp/out.json
 curl "http://localhost:5000/features?&surface_type=ground&limit=1000&startindex=1000" > /tmp/out.json
 curl "http://localhost:5000/features?bbox=9.966831,53.561622,10.057812,53.611146&surface_type=ground&limit=100" > /tmp/out.json
+curl "http://localhost:5000/features?bbox=10.004725,53.577933,10.016119,53.583576&surface_type=ground&limit=10000&intersect=true" > /tmp/out.json
+  
 curl "http://localhost:5000/features?&properties=id,lage" > /tmp/out.json
 ```
 

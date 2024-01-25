@@ -129,3 +129,21 @@ def test_endpoint_with_bpoly_urlencoded(client: FlaskClient) -> None:
         'DEHH_2cfcae78-56f5-4a77-b74d-51cce7cc3d3e_2_poly',
         'DEHH_d1c15e0c-707a-4734-abea-2a1f810c1890_2_poly',
         'DEHH_1fd3c3ef-fc46-4024-ac10-3b272044391d_2_poly']
+
+
+def test_endpoint_with_intersect(client: FlaskClient, snapshot) -> None:
+    response = client.get(
+        '/features?bbox=10.315909,53.446486,10.316386,53.446842&intersect=true')
+
+    assert response.status_code == 200
+    actual = response.json
+    assert actual == snapshot
+
+
+def test_endpoint_with_bpoly_and_intersect(client: FlaskClient, snapshot) -> None:
+    polygon_str = "10.315909,53.446486;10.315909,53.446842;10.316386,53.446842;10.316386,53.446486;10.315909,53.446486"
+    response = client.get(f'/features?bounding_polygon={polygon_str}&intersect=true')
+
+    assert response.status_code == 200
+    actual = response.json
+    assert actual == snapshot

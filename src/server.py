@@ -22,15 +22,23 @@ class Server:
 
         @self.app.route("/features")
         def features() -> Response:
-            bbox = request.args.get("bbox", default="-180,-90,180,90")
-            bbox_values = [float(val) for val in bbox.split(",")]
+            bbox = request.args.get("bbox")
+            bounding_polygon = request.args.get("bounding_polygon")
+
+            if (bbox is not None) and (bounding_polygon is not None):
+                return jsonify(
+                    {"error": "Either bbox or bounding_polygon must be set, but not both"}
+                ), 400
+
+            intersect = request.args.get("intersect", default="false").lower() == "true"
+
+            select_geom = "geojson"
+            if intersect:
+                geo = "GeomFromText(:polygon_wkt)" if bounding_polygon \
+                    else "BuildMbr(:min_lon, :min_lat, :max_lon, :max_lat)"
+                select_geom += f", AsGeoJSON(ST_Intersection(geom, {geo})) as inter_geom"
 
             surface_type = request.args.get("surface_type", default=None, type=str)
-
-            if len(bbox_values) != 4:
-                return jsonify({"error": "Invalid bbox parameter"}), 400
-
-            min_lon, min_lat, max_lon, max_lat = bbox_values
 
             limit = request.args.get(
                 "limit", default=100, type=int
@@ -39,26 +47,38 @@ class Server:
                 "startindex", default=0, type=int
             )  # Starting index for items
 
-            bounding_polygon = request.args.get("bounding_polygon", default=None)
+            base_sql = f"FROM {TABLE_NAME}"
+            conditions = []
             if bounding_polygon:
                 try:
                     polygon_coords = bounding_polygon.split(";")
                     polygon_points = [tuple(map(float, coord.split(","))) for coord in polygon_coords]
                     polygon_wkt = "POLYGON((" + ", ".join(f"{lon} {lat}" for lon, lat in polygon_points) + "))"
+                    if intersect:
+                        conditions.append("ST_Intersects(geom, GeomFromText(:polygon_wkt))")
+                    else:
+                        conditions.append("MbrWithin(geom, GeomFromText(:polygon_wkt))")
                 except (ValueError, TypeError):
                     return jsonify({"error": "Invalid bounding_polygon parameter"}), 400
+            elif bbox:
+                bbox_values = [float(val) for val in bbox.split(",")]
+                if len(bbox_values) != 4:
+                    return jsonify({"error": "Invalid bbox parameter"}), 400
+                min_lon, min_lat, max_lon, max_lat = bbox_values
+                if intersect:
+                    conditions.append("ST_Intersects(geom, BuildMbr(:min_lon, :min_lat, :max_lon, :max_lat))")
+                else:
+                    conditions.append("MbrWithin(geom, BuildMbr(:min_lon, :min_lat, :max_lon, :max_lat))")
 
-            base_sql = f"FROM {TABLE_NAME} WHERE "
-            if bounding_polygon:
-                base_sql += "MbrWithin(geom, GeomFromText(:polygon_wkt)) AND "
-            base_sql += "MbrWithin(geom, BuildMbr(:min_lon, :min_lat, :max_lon, :max_lat))"
-
-            # Add surface type filter if provided
             if surface_type:
-                base_sql += " AND json_extract(geojson, '$.properties.surface_type') = :surface_type"
+                conditions.append("json_extract(geojson, '$.properties.surface_type') = :surface_type")
+
+            if conditions:
+                stmts = " AND ".join(conditions)
+                base_sql += f" WHERE {stmts}"
 
             count_sql = text(f"SELECT COUNT(*) {base_sql}")
-            sql = text(f"SELECT id, geojson {base_sql} LIMIT :limit OFFSET :startindex")
+            sql = text(f"SELECT id, {select_geom} {base_sql} LIMIT :limit OFFSET :startindex")
 
             with self.engine.connect() as conn:
                 query_params = {
@@ -66,7 +86,7 @@ class Server:
                     "min_lon": min_lon,
                     "max_lat": max_lat,
                     "max_lon": max_lon,
-                }
+                } if bbox else {}
 
                 if surface_type:
                     query_params["surface_type"] = surface_type
@@ -81,7 +101,15 @@ class Server:
 
                 result = conn.execute(sql, query_params)
 
-                features = [json.loads(row[1]) for row in result]
+                if intersect:
+                    features = []
+                    for _, gjson, inter in result:
+                        feature = json.loads(gjson)
+                        feature['geometry'] = json.loads(inter)
+                        features.append(feature)
+                else:
+                    features = [json.loads(row[1]) for row in result]
+
                 properties = request.args.get("properties")
                 if properties:
                     properties = properties.split(",")
@@ -127,7 +155,7 @@ class Server:
             )
 
     def setup_db(self) -> None:
-        @event.listens_for(self.engine, "connect")
+        @ event.listens_for(self.engine, "connect")
         def load_spatialite(dbapi_connection, connection_record):
             dbapi_connection.enable_load_extension(True)
             dbapi_connection.execute('SELECT load_extension("mod_spatialite")')
