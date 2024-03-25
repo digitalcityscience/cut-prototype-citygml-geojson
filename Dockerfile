@@ -10,10 +10,7 @@ ENV PYTHONUNBUFFERED=1
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
 
-COPY ./src/convert.py .
-COPY ./src/create_db.py .
-COPY ./src/server.py .
-COPY ./src/main.py .
+COPY ./src/. .
 RUN mkdir /data
 RUN mkdir /static
 COPY ./src/static/swagger.json static/swagger.json
