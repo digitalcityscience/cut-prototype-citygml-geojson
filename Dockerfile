@@ -12,5 +12,5 @@ WORKDIR /srv
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
 
-COPY ./src/. .
-RUN mkdir /data
+COPY ./src/. ./src
+RUN mkdir ./src/data
