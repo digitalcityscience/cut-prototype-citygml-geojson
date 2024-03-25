@@ -12,5 +12,3 @@ RUN python -m pip install -r requirements.txt
 
 COPY ./src/. .
 RUN mkdir /data
-RUN mkdir /static
-COPY ./src/static/swagger.json static/swagger.json
