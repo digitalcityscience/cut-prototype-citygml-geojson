@@ -1,5 +1,5 @@
 geopandas==0.14.1
-lxml==4.9.3
+lxml==6.1.0
 shapely==2.0.2
 SQLAlchemy==2.0.23
 Flask==3.0.0
